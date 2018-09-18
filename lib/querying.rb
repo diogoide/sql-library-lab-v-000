@@ -30,6 +30,7 @@ end
 def select_series_title_with_most_human_characters
   "SELECT series.title
   FROM series
+  INNER JOIN characters ON series.author_id = chracters.author_id 
   WHERE species = 'human'
   ORDER BY length(title) DESC
   LIMIT 1;"
